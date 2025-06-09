@@ -1,6 +1,6 @@
 FROM node:18-bullseye-slim
 
-LABEL author="ar4kiara@gmail.com" maintainer="ar4kiara@gmail.com"
+LABEL author="ara4kiara" maintainer="ar4kiara.vps@gmail.com"
 
 RUN apt update
 RUN apt -y install ffmpeg iproute2 git sqlite3 libsqlite3-dev ca-certificates dnsutils tzdata zip tar curl build-essential libtool iputils-ping \
