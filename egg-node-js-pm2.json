@@ -10,9 +10,9 @@
     "description": "Node.js egg with PM2 process manager, Python3, pip3, and Chromium support",
     "features": null,
     "docker_images": {
-        "Node.js 18 with PM2": "ghcr.io/ar4kiara/pm2:18",
-        "Node.js 20 with PM2": "ghcr.io/ar4kiara/pm2:20",
-        "Node.js 22 with PM2": "ghcr.io/ar4kiara/pm2:22"
+        "Node.js 18 with PM2": "ghcr.io/ara4kiara/pm2:18",
+        "Node.js 20 with PM2": "ghcr.io/ara4kiara/pm2:20",
+        "Node.js 22 with PM2": "ghcr.io/ara4kiara/pm2:22"
     },
     "file_denylist": [],
     "startup": "if [[ -d .git ]] && [[ {{AUTO_UPDATE}} == \"1\" ]]; then git pull; fi; if [[ ! -z ${NODE_PACKAGES} ]]; then /usr/local/bin/npm install ${NODE_PACKAGES}; fi; if [[ ! -z ${PYTHON_PACKAGES} ]]; then pip3 install ${PYTHON_PACKAGES}; fi; if [ -f /home/container/package.json ]; then /usr/local/bin/npm install; fi; if [ ! -f /home/container/{{CMD_RUN}} ] && [[ ! {{CMD_RUN}} =~ ^/usr/local/bin/npm ]]; then echo \"Error: File {{CMD_RUN}} not found\"; exit 1; fi; pm2 start {{CMD_RUN}} --no-daemon",
